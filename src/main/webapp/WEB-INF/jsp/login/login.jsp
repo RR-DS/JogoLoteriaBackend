@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+    
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -49,11 +51,11 @@
                     <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
                     </div>
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">
+                    <a href="<c:url value="dashboard"/>" class="btn btn-primary btn-user btn-block">
                       Login
                     </a>
                     <hr>
-                    <a href="register.html" class="btn btn-google btn-user btn-block">
+                    <a href="<c:url value="cadastrar"/>" class="btn btn-google btn-user btn-block">
                       Cadastrar
                     </a>
                   </form>
