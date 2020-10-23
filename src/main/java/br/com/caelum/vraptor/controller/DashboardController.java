@@ -25,15 +25,5 @@ public class DashboardController {
 		
 	}
 	
-	@Post("salvausuario")
-	public void salvaUsuario(Usuario usuario) {
-		//validar usuario
-		//salvar usuario no banco 
-		
-		usuarioDao.insertOrUpdate(usuario);
-		
-		//direcionar para o dashboard
-		result.redirectTo(DashboardController.class).dashboard();
-	}
 }
 

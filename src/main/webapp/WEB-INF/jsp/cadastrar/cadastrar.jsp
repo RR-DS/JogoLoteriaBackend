@@ -38,24 +38,30 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Cadastrar!</h1>
               </div>
-              <form method="post" class="user" action="<c:url value="dashboard/salvausuario"/>">
+              
+              <c:if test="${not empty errors}">
+                <div class="alert alert-danger" role="alert">
+                  <c:forEach var="error" items="${errors}">
+                     ${error.message}<br/>
+                  </c:forEach>
+                </div>
+              </c:if>
+              
+              <form method="post" class="user" action="<c:url value="cadastrar/salvausuario"/>">
                 <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input name="usuario.nome" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
-                  </div>
-                  <div class="col-sm-6">
-                    <input name="usuario.sobrenome" type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Sobrenome">
+                  <div class="col-sm-12 mb-3 mb-sm-0">
+                    <input name="usuario.nome" value="${usuario.nome}"  minlength="3" maxlength="15" type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nome">
                   </div>
                 </div>
                 <div class="form-group">
-                  <input name="usuario.email" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
+                  <input name="usuario.email" value="${usuario.email}" type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input name="usuario.senha" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
+                    <input name="usuario.senha" value="${usuario.senha}" minlength="6" maxlength="20" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirme a Senha">
+                    <input name="confirmaSenha" value="${confirmaSenha}" type="password" minlength="6" maxlength="20" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Confirme a Senha">
                   </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-user btn-block">

@@ -8,13 +8,13 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class Usuario extends Model {
 	
-	@NotEmpty @Size(min = 4, max=20)
+	@NotEmpty(message ="{usuario.nome.embranco}") @Size(min = 4, max=20, message = "{usuario.nome.size}")
 	private String nome;
 	
-	@NotEmpty @Email
+	@NotEmpty(message = "{usuario.email.embranco}") @Email(message = "{usuario.email}")
 	private String email;
 	
-	@NotEmpty @Size(min = 6, max=20)
+	@NotEmpty(message = "{usuario.senha.embranco}") @Size(min = 6, max=20, message="{usuario.senha.size}")
 	private String senha;
 	public String getNome() {
 		return nome;
@@ -33,11 +33,6 @@ public class Usuario extends Model {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
-	}
-	
-	public void setSobrenome(String sobrenome) {
-		this.nome += " "+sobrenome;
-	}
-	
+	}	
 	
 }
