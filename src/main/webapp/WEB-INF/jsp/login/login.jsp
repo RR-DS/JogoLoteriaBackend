@@ -44,16 +44,24 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Login!</h1>
                   </div>
-                  <form class="user">
+                  <c:if test="${not empty errors}">
+                	<div class="alert alert-danger" role="alert">
+                  		<c:forEach var="error" items="${errors}">
+                     		${error.message}<br/>
+                  		</c:forEach>
+                	</div>
+              	  </c:if>
+              
+              	  <form method="post" class="user" action="<c:url value="login/autenticar"/>">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
+                      <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
+                      <input name="senha" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Senha">
                     </div>
-                    <a href="<c:url value="dashboard"/>" class="btn btn-primary btn-user btn-block">
+                    <button type="submit" class="btn btn-primary btn-user btn-block">
                       Login
-                    </a>
+                    </button>
                     <hr>
                     <a href="<c:url value="cadastrar"/>" class="btn btn-google btn-user btn-block">
                       Cadastrar
