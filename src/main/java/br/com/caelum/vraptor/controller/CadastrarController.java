@@ -2,6 +2,7 @@ package br.com.caelum.vraptor.controller;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import br.com.caelum.vraptor.Controller;
@@ -23,6 +24,7 @@ public class CadastrarController {
 	@Inject Result result;
 	@Inject UsuarioDAO usuarioDao;
 	@Inject Validator validator;
+	@Inject HttpSession session;
 
 	@Get("")
 	public void cadastrar() {
@@ -35,7 +37,9 @@ public class CadastrarController {
 		boolean asSenhasSaoIguais = confirmaSenha.equals(usuario.getSenha());
 		validator.addIf(!asSenhasSaoIguais, new SimpleMessage("confirmaSenha", "A confirmação esta diferente da senha"));
 		validator.onErrorRedirectTo(this).cadastrar();
-		usuarioDao.insertOrUpdate(usuario);
+		
+		Usuario usuarioDoBanco = usuarioDao.insertOrUpdate(usuario);
+		session.setAttribute("usuarioLogado", usuarioDoBanco);
 		result.redirectTo(DashboardController.class).dashboard();
 	}
 	

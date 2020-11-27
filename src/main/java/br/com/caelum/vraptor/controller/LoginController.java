@@ -1,6 +1,7 @@
 package br.com.caelum.vraptor.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -18,13 +19,23 @@ import br.com.caelum.vraptor.validator.Validator;
 @Controller
 public class LoginController {
 	
+	@Inject HttpSession session;
 	@Inject Validator validator;
 	@Inject UsuarioDAO usuarioDao;
 	@Inject Result result;
 
 	@Get("")
 	public void login() {
-		
+		Usuario usuarioLogado = (Usuario) session.getAttribute("usuarioLogado");
+		if(usuarioLogado != null) {
+			result.redirectTo(DashboardController.class).dashboard();;
+		}
+	}
+	
+	@Get("logout")
+	public void logout() {
+		session.setAttribute("usuarioLogado", null);
+		result.redirectTo(this).login();
 	}
 	
 	@Post("autenticar")
@@ -39,6 +50,7 @@ public class LoginController {
 		validator.addIf(usuario == null, new SimpleMessage("semUsuario","Email ou Senha Invalidos"));
 		validator.onErrorRedirectTo(this).login();
 		
+		session.setAttribute("usuarioLogado", usuario);
 		result.redirectTo(DashboardController.class).dashboard();
 	}
 	
