@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
  
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,15 +14,17 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Logo Loteria - Dashboard</title>
+  <title>Jogo Loteria - Resultado</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/print-dashboard.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 
@@ -46,7 +49,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<c:url value="dashboard"/>">
+        <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -61,13 +64,13 @@
 
       <!-- Nav Item - Charts -->
       <li class="nav-item">
-        <a class="nav-link" href="<c:url value="novaaposta"/>">
+        <a class="nav-link" href="novaaposta.html">
           <i class="fas fa-fw fa-cube"></i>
           <span>Nova Aposta</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="<c:url value="apostas"/>">
+        <a class="nav-link" href="apostas.html">
           <i class="fas fa-fw fa-cubes"></i>
           <span>Apostas</span></a>
       </li>
@@ -174,7 +177,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">${usuarioLogado.nome}</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nome Usuario</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
@@ -200,162 +203,94 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4 no-print">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <button onclick="window.print()" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Gerar Relatório</button>
-          </div>
-
-          <div class="d-sm-flex align-items-center justify-content-center mb-4 only-print">
-            <h1 class="h3 mb-0 text-gray-800">Relatório Resumo de Apostas</h1>
-          </div>
-
-          <!-- Content Row -->
+          <h1 class="h3 mb-4 text-gray-800 text-center">Resultado</h1>
           <div class="row">
+            <div class="col-12">
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+              <!-- Basic Card Example -->
+              <div class="card shadow mb-4 card-novaaposta mx-auto">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary text-center">Confira quais números foram sorteados</h6>
+                </div>
                 <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Ganhado (Hoje)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">R$ 35,00</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+
+
+                  <div class="row">
+                    <div class="col-md-12 numeros">
+                      <h2>Números Sorteados</h2>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">1</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">3</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">4</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">5</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">8</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">10</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">11</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">13</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">15</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">16</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">18</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">20</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">22</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">24</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">25</span>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Ganhado (Geral)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">R$ 1.315,00</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  <div class="row mt-5">
+                    <div class="col-md-12 numeros">
+                      <h2>Sua Aposta</h2>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">1</span>
+                      <span class="badge badge-pill badge-danger p-3 text-lg">2</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">3</span>
+                      <span class="badge badge-pill badge-danger p-3 text-lg">6</span>
+                      <span class="badge badge-pill badge-danger p-3 text-lg">7</span>
+                      <span class="badge badge-pill badge-danger p-3 text-lg">9</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">11</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">13</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">16</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">18</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">20</span>
+                      <span class="badge badge-pill badge-danger p-3 text-lg">21</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">22</span>
+                      <span class="badge badge-pill badge-danger p-3 text-lg">23</span>
+                      <span class="badge badge-pill badge-primary p-3 text-lg">24</span>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Ganhos Por Aposta</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                        </div>
-                        <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div>
+
+                  <div class="row mt-3">
+                    <div class="col-md-6 d-flex align-items-center justify-content-center">
+                      <div>
+                        <h4>Codigo Aposta: <strong>5241</strong></h4>
+                        <h4>Erros: <strong>6</strong></h4>
+                        <h4>Acertos: <strong>9</strong></h4>
+                        <h4>Ganhos: <strong>Nenhum</strong></h4>
                       </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    <div class="col-md-6">
+                      <img class="imagem-novaaposta img-fluid" alt="dinheiro"
+                        src="https://www.gpspoint.com.br/wp-content/uploads/2019/11/ganhar-dinheior-internet.png">
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
 
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total de Apostas</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">102</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-cubes fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Content Row -->
-
-          <div class="row">
-
-            <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Ganhos por Mês</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
-              <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Acertos das Apostas</h6>
-                  <div class="dropdown no-arrow">
-                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2">
-                    <canvas id="myPieChart"></canvas>
-                  </div>
-                  <div class="mt-4 text-center small">
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-primary"></i> Ganhou
+                <div class="card-footer text-center">
+                  <a href="<c:url value="novaaposta"/>" class="btn btn-primary btn-icon-split btn-lg mt-3 mb-3 mr-4">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-plus"></i>
                     </span>
-                    <span class="mr-2">
-                      <i class="fas fa-circle text-success"></i> Perdeu
+                    <span class="text">Nova Aposta</span>
+                  </a>
+                  <a href="<c:url value="apostas"/>" class="btn btn-info btn-icon-split btn-lg mt-3 mb-3">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-cubes"></i>
                     </span>
-                  </div>
+                    <span class="text">Ver Apostas</span>
+                  </a>
                 </div>
               </div>
+              <!-- Fim card-->
+
             </div>
           </div>
 
@@ -366,7 +301,7 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      <footer class="sticky-footer bg-white no-print">
+      <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
             <span>Copyright &copy; Your Website 2020</span>
@@ -387,19 +322,20 @@
   </a>
 
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Deseja realmente Sair?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">x</span>
           </button>
         </div>
-        
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-          <a class="btn btn-primary" href="<c:url value="/login/logout"/>">Sair</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>
@@ -414,13 +350,6 @@
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 
